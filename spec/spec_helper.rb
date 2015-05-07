@@ -1,12 +1,14 @@
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
+require 'pry'
 
 ENV['RAILS_ENV'] ||= 'test'
 
 require File.expand_path("../dummy/config/environment.rb",  __FILE__)
 require 'rspec/rails'
-require 'rspec/autorun'
 
 Rails.backtrace_cleaner.remove_silencers!
+
+require 'rspec-html-matchers'
 
 # Load support files
 Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each { |f| require f }

@@ -1,2 +1,5 @@
-<h1>Tasks#index</h1>
-<p>Find me in app/views/rake_dashboard/tasks/index.html.erb</p>
+<ul>
+  <% @tasks.each do |task| -%>
+    <li><%= link_to(task.name, tasks_path(task: task.name), method: :post) %></li>
+  <% end -%>
+</ul>
