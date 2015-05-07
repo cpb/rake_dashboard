@@ -7,6 +7,7 @@ module RakeDashboard
     end
 
     def create
+      render text: capture(:stdout) { Rake::Task[params[:task]].invoke }
     end
   end
 end

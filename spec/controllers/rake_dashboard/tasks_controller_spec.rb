@@ -27,10 +27,29 @@ module RakeDashboard
 
     end
 
-    describe "GET #create" do
+    describe "POST #create" do
+      let(:task) { double("task") }
+      before do
+        allow(task).to receive(:invoke) { puts "invoked!" }
+      end
+
       it "returns http success" do
         post :create, task: :secret
         expect(response).to have_http_status(:success)
+      end
+
+      it "should invoke the passed rake task" do
+        expect(Rake::Task).to receive(:[]).with("secret").and_return(task)
+
+        post :create, task: :secret
+        expect(response).to have_http_status(:success)
+      end
+
+      it "should respond with the task ouput" do
+        expect(Rake::Task).to receive(:[]).with("secret").and_return(task)
+
+        post :create, task: :secret
+        expect(response.body).to eql("invoked!\n")
       end
     end
 
