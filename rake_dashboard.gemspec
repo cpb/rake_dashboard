@@ -15,12 +15,19 @@ Gem::Specification.new do |spec|
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
+  spec.test_files    = Dir["spec/**/*"]
   spec.bindir        = "exe"
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
   spec.add_dependency "rails", "~> 4.1.0"
+  spec.add_dependency "jquery-rails", "~> 3.1.2"
+  spec.add_development_dependency "sqlite3", "~> 1.3.10"
+  spec.add_development_dependency "capybara", "~> 2.4.4"
   spec.add_development_dependency "bundler", "~> 1.9"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.2.0"
+  spec.add_development_dependency "rspec-rails", "~> 3.2.0"
+  spec.add_development_dependency "rspec-html-matchers", "~> 0.7.0"
+  spec.add_development_dependency "pry"
 end
