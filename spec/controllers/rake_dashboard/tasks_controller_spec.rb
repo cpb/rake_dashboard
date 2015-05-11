@@ -31,6 +31,7 @@ module RakeDashboard
       let(:task) { double("task") }
       before do
         allow(task).to receive(:invoke) { puts "invoked!" }
+        allow(Rake::Task).to receive(:[]).with("secret").and_return(task)
       end
 
       it "returns http success" do
@@ -49,7 +50,7 @@ module RakeDashboard
         expect(Rake::Task).to receive(:[]).with("secret").and_return(task)
 
         post :create, task: :secret
-        expect(response.body).to eql("invoked!\n")
+        expect(response.body).to eql("<pre>invoked!\n</pre>")
       end
     end
 

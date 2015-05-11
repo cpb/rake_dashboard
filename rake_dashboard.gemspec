@@ -29,5 +29,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rspec", "~> 3.2.0"
   spec.add_development_dependency "rspec-rails", "~> 3.2.0"
   spec.add_development_dependency "rspec-html-matchers", "~> 0.7.0"
+  spec.add_development_dependency "poltergeist", "~> 1.6.0"
   spec.add_development_dependency "pry"
 end
