@@ -22,7 +22,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "rails", "~> 4.1.0"
   spec.add_dependency "jquery-rails", "~> 3.1.2"
-  spec.add_development_dependency "sqlite3", "~> 1.3.10"
+  # Moved sqlite3 development dependency to Gemfile
   spec.add_development_dependency "capybara", "~> 2.4.4"
   spec.add_development_dependency "bundler", "~> 1.9"
   spec.add_development_dependency "rake", "~> 10.0"
