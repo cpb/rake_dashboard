@@ -1,7 +1,10 @@
 require_dependency "rake_dashboard/application_controller"
+require 'session_off'
 
 module RakeDashboard
   class TasksController < ApplicationController
+    session :off
+
     def index
       @tasks = RakeDashboard.tasks
     end
