@@ -1,3 +1,5 @@
+require 'rails/generators'
+
 module RakeDashboard
   class InstallGenerator < Rails::Generators::Base
     argument :mount_point, type: :string, default: "/rake", banner: "mount point for RakeDashboard"
