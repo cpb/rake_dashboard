@@ -22,25 +22,15 @@ And then execute:
 
     $ bundle
 
-Or install it yourself as:
+Finally, run the provided install generator to add an initializer and a default mount point of ```/rake```:
 
-    $ gem install rake_dashboard
+    $ rails g rake_dashboard:install
 
 ## Usage
 
-1. Mount the RakeDashboard engine to your preferred path prefix, for example:
+1. Point your browser to your new route: ```/rake/tasks```.
 
-  ```ruby
-  Rails.application.routes.draw do
-
-      mount RakeDashboard::Engine, at: "/rake"
-
-  end
-  ```
-
-2. Point your browser to your new route: ```/rake/tasks```.
-
-3. Click on the task you want to run.
+2. Click on the task you want to run.
 
 ## Development
 

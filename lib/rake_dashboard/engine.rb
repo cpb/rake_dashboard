@@ -1,4 +1,6 @@
 module RakeDashboard
+  require 'rake_dashboard/generators/install/install_generator.rb'
+
   class Engine < ::Rails::Engine
     require 'jquery-rails'
 

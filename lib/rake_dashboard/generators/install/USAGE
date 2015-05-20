@@ -1,0 +1,12 @@
+Description:
+    This RakeDashboard installation generator mounts and configures the
+    RakeDashboard Engine.
+
+Example:
+    rails generate rake_dashboard:install
+
+    This will create:
+         config/initializers/rake_dashboard.rb
+
+    And add to:
+         config/routes.rb
